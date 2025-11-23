@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.List;
 import java.util.Map;
 
-public class main {
+public class main { // Class name should match file: Main.java
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -25,7 +25,6 @@ public class main {
             sc.nextLine();
 
             switch (choice) {
-
                 case 1: {
                     System.out.print("Enter Email: ");
                     String email = sc.nextLine();
@@ -52,14 +51,12 @@ public class main {
                     System.out.println("✅ LOGIN SUCCESS!");
                     System.out.println("Welcome, " + user.get("u_name") + "!");
 
-                    if (type.equalsIgnoreCase("Admin")) {
+                     if (type.equalsIgnoreCase("Admin")) {
                         Admin admin = new Admin();
-                        admin.AdminDashboard(user); 
+                        admin.Admin();
                     } else if (type.equalsIgnoreCase("Agent")) {
                         Agent agent = new Agent();
-                        agent.AgentDashboard(user); 
-                    } else {
-                        System.out.println("❌ Unknown user type.");
+                        agent.Agent();
                     }
                     break;
                 }
